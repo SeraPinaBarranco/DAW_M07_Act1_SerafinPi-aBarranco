@@ -42,46 +42,42 @@
     <h3>Actividad 1.3</h3>
         <?php 
             // -b +- sqrt( b^2 - 4 (a*c))/ 2a
-            $a = -2;
-            $b = 4;
-            $c=4;
+            $a = 1;
+            $b = -2;
+            $c=1;
             $res = 0;
             $bCuadrado = 0;
-            $radicando =0;
+            $discriminante =0;
             $raiz;
-            $resMas;
-            $resMenos;
+            $numeradorMas;
+            $numeradorMenos;
 
-           if($a == 0){
+            // -b +- sqrt( b^2 - 4 (a*c))/ 2a
+            if($a == 0){
                exit("El valor del denominador no puede ser " . $a .", esto es una indeterminación");
             }else{//Si a no es 0 continuar con la logica
                 //descomponer la ecuacion en partes
                 $bCuadrado =  pow($b,2);
                 $discriminante = $bCuadrado -4 * $a * $c;
-
-                echo($discriminante);
-                echo("<br>");
-
-                if($discriminante >= 0){//Si lo que hay en el radicado no es negativo
+                //echo($discriminante);
+                
+                if($discriminante >= 0){//Si lo que hay en el discriminante no es negativo
                     
-                    $raiz = sqrt($discriminante);
-                    echo(-1 * $b . " resultado de -b");
-                    echo("<br>");
-                    echo($raiz . " resultado de raiz cuadrada");
-                    echo("<br>");
-                    echo(2 * $a . " resultado del denominador");
-                    echo("<br>");
-                    $resMas =((-1 * $b) + $raiz)/2 * $a;
-                    $resMenos=((-1 * $b) -$raiz)/2 * $a;     
-                    
-                    //echo($discriminante);
+                    $numeradorMas = (-$b + sqrt($discriminante))/ (2 * $a);
+                    $numeradorMenos = (-$b - sqrt($discriminante))/ (2 * $a);
+
+                    if($numeradorMas == $numeradorMenos){
+                        echo("Las unica solución es " . $numeradorMas);
+                    }else{
+                        echo("Las soluciones a la ecuación son " . $numeradorMas . " y " . $numeradorMenos);
+                    }
                     
                 }else{
                     //echo("El discriminante es negativo, no se puede solucionar ");
-                    exit("Programa terminado!!");
+                    exit("El discriminante es negativo, no se puede solucionar");
                 }
                 
-                echo("Las soluciones a la ecuación son " . $resMas . " y " . $resMenos);
+                //echo("Las soluciones a la ecuación son " . $resMas . " y " . $resMenos);
                 //echo($raiz);
            }
            
