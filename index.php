@@ -42,23 +42,47 @@
     <h3>Actividad 1.3</h3>
         <?php 
             // -b +- sqrt( b^2 - 4 (a*c))/ 2a
-           $a = 1;
-           $b = 2;
-           $c=2;
-           $res = 0;
+            $a = -2;
+            $b = 4;
+            $c=4;
+            $res = 0;
+            $bCuadrado = 0;
+            $radicando =0;
+            $raiz;
+            $resMas;
+            $resMenos;
 
-           
            if($a == 0){
-               echo("El valor del denominador no puede ser " . $a .", esto es una indeterminación");
+               exit("El valor del denominador no puede ser " . $a .", esto es una indeterminación");
             }else{//Si a no es 0 continuar con la logica
                 //descomponer la ecuacion en partes
                 $bCuadrado =  pow($b,2);
-                $radicando = $bCuadrado - 4 * ($a * $c);
-                $raiz = sqrt($radicando);
-                $resMas =-1 * $b + ($raiz);
-                $resMenos=-1 * $b -($raiz);               
+                $discriminante = $bCuadrado -4 * $a * $c;
+
+                echo($discriminante);
+                echo("<br>");
+
+                if($discriminante >= 0){//Si lo que hay en el radicado no es negativo
+                    
+                    $raiz = sqrt($discriminante);
+                    echo(-1 * $b . " resultado de -b");
+                    echo("<br>");
+                    echo($raiz . " resultado de raiz cuadrada");
+                    echo("<br>");
+                    echo(2 * $a . " resultado del denominador");
+                    echo("<br>");
+                    $resMas =((-1 * $b) + $raiz)/2 * $a;
+                    $resMenos=((-1 * $b) -$raiz)/2 * $a;     
+                    
+                    //echo($discriminante);
+                    
+                }else{
+                    //echo("El discriminante es negativo, no se puede solucionar ");
+                    exit("Programa terminado!!");
+                }
                 
-                echo($raiz);
+                echo("Las soluciones a la ecuación son " . $resMas . " y " . $resMenos);
+                //echo($raiz);
            }
            
            
