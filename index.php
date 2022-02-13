@@ -109,31 +109,28 @@
     <h3>--- Fin actividad 1.4 ---</h3>
 
     <h3>Actividad 1.5</h3>
+   
            <?php 
-               $miArray = array();
+               define("FILAS", 20);
+               define("COLUMNAS", 20);
 
-               echo("<table >");
-               echo("<tr >");
-               for ($i=0; $i < 20; $i++) { 
-                   $miArray[$i]= $i + 1;
+               $contador= 1;
 
-                   echo("<td style='border: 1px solid black'>" . $miArray[$i] . "<td>");
-
-                   for ($j=0; $j < 20; $j++) { 
-                        echo("<td style='border: 1px solid black'>" . $miArray[$i][$j] = $j +1  . "<td>");
-                   }
-                   /*<table>
-                        
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                        </tr>
-                        
-                    </table>*/
+               echo("<table style='border: 1px solid black;border-collapse: collapse;'>");
+               for ($i=1; $i <= FILAS; $i++) { 
+                   
+                   echo("<tr style='border: 1px solid black;border-collapse: collapse;'>");
+                    for ($j=1; $j <= COLUMNAS; $j++) { 
+                        if($contador % 3 == 1)echo("<td style='background-color:red; border: 1px solid black;border-collapse: collapse;'>" .  $contador  . "</td>");
+                        if($contador % 3 == 2)echo("<td style='background-color:blue;color:white;border: 1px solid black;border-collapse: collapse;'>" .  $contador  . "</td>");
+                        if($contador % 3 == 0)echo("<td style='background-color:gray;border: 1px solid black;border-collapse: collapse;'>" .  $contador  . "</td>");
+                        $contador ++;
+                    }
+                   
+                    echo("</tr>");
                }
-               echo($miArray);
-               echo("</tr><table>");
+              
+               echo("<table>");
            ?>
     <br>
     <h3>--- Fin actividad 1.5 ---</h3>
