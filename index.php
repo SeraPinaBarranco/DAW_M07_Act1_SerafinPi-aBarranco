@@ -47,7 +47,7 @@
 </body>
 </html>
 
-
+<!-- Funciones PHP -->
 <?php
     function conversor($val1){
         $valor = $val1;
@@ -65,14 +65,14 @@
     function segundos($seg){
         $segundos = $seg;
 
-            $segundosResiduo= ($segundos %60) %60;//Obtengo el resto de las divisiones sucesivas
+        $segundosResiduo= ($segundos %60) %60;//Obtengo el resto de las divisiones sucesivas
 
-            $horas = floor(($segundos/60)/60); //con floor cojo la parte entera de la division                       
-           
-            $minutos = $segundos /  60;
-            $minutosResiduo = $minutos % 60; // Cojo el resto de dividir lo que tengo en $minutos entre 60
+        $horas = floor(($segundos/60)/60); //con floor cojo la parte entera de la division                       
+        
+        $minutos = $segundos /  60;
+        $minutosResiduo = $minutos % 60; // Cojo el resto de dividir lo que tengo en $minutos entre 60
 
-            echo($segundos . " segundos equivalen a " . $horas  .  " horas," . $minutosResiduo . " minutos y " . $segundosResiduo . " segundos.");
+        echo($segundos . " segundos equivalen a " . $horas  .  " horas," . $minutosResiduo . " minutos y " . $segundosResiduo . " segundos.");
     }
 
     function raiz_cuadrada($na, $nb, $nc){
