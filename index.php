@@ -17,14 +17,14 @@
 
     <h3>Actividad 1.2</h3>
         <?php 
-            segundos(6000);
+            segundos(7500);
         ?>
     <br>
     <h3>--- Fin actividad 1.2 ---</h3>
 
     <h3>Actividad 1.3</h3>
         <?php             
-           raiz_cuadrada(-4, 2, 4);
+           raiz_cuadrada(-2, 3, 4);
         ?>
     <br>
     <h3>--- Fin actividad 1.3 ---</h3>
@@ -59,7 +59,7 @@
         define("DOLARES", $dolares * $valor);
         define("YENES", $yenes * $valor);
         
-        echo ($valor . " euros equivalen a " .  DOLARES . " dolares y " . YENES . " yenes." );
+        echo ($valor . " euros equivalen a " . DOLARES . " dolares y " . YENES . " yenes." );
     }
 
     function segundos($seg){
@@ -89,7 +89,7 @@
 
         // -b +- sqrt( b^2 - 4 (a*c))/ 2a
         if($a == 0){
-           exit("El valor del denominador no puede ser " . $a .", esto es una indeterminación");
+           echo("El valor del denominador no puede ser " . $a .", esto es una indeterminación");
         }else{//Si a no es 0 continuar con la logica
             //descomponer la ecuacion en partes
             $bCuadrado =  pow($b,2);
@@ -101,14 +101,14 @@
                 $numeradorMenos = (-$b - sqrt($discriminante))/ (2 * $a);
 
                 if($numeradorMas == $numeradorMenos){//Si los resultados son iguales solo hay una solucion posible
-                    echo("Las unica solución es " . $numeradorMas);
+                    echo("Las unica solución es " . sprintf("%.2f",  $numeradorMas));
                 }else{
-                    echo("Las soluciones a la ecuación son " . $numeradorMas . " y " . $numeradorMenos);
+                    echo("Las soluciones a la ecuación son " . sprintf("%.2f",  $numeradorMas) . " y " . sprintf("%.2f", $numeradorMenos));
                 }
                 
             }else{
                 //echo("El discriminante es negativo, no se puede solucionar ");
-                exit("El discriminante es negativo, no se puede solucionar");
+                echo("El discriminante es negativo, no se puede solucionar");
             }                       
         }
     }
@@ -120,17 +120,17 @@
 
                 $longCircunferencia= 2 * M_PI * $r;
 
-                echo("La longitud de la circunferencia es: " . $longCircunferencia);
+                echo("La longitud de la circunferencia es: " . sprintf("%.2f", $longCircunferencia));
                 echo("<br>");
                 //Hayar el area de la circunferencia
                 //A = PI*r^2
                 $area = M_PI * pow($r,2);
-                echo("El area de la circunferencia es: " . $area);
+                echo("El area de la circunferencia es: " .sprintf("%.2f",  $area));
                 echo("<br>");
                 //Hayar el volumen de la circunferencia
                 //V = 3/4PI * r^3
                 $volumen= 4/3 * M_PI * pow($r,3);
-                echo("El volumen de la esfera es: " . $volumen);
+                echo("El volumen de la esfera es: " . sprintf("%.2f", $volumen));
     }
 
     function tabla(){
