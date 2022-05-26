@@ -10,6 +10,8 @@
     <h3>Actividad 1.1</h3>
     <?php        
         conversor(5);
+        echo("<br>");
+        divisas();
     ?>
     
     <br>
@@ -40,6 +42,7 @@
    
            <?php 
                tabla();
+               tabla2();
            ?>
     <br>
     <h3>--- Fin actividad 1.5 ---</h3>
@@ -154,5 +157,51 @@
         }
         
         echo("<table>");
+    }
+
+
+    //practicas examen
+    function divisas(){
+        $num = 200;
+        define("DOLAR", 1.5);
+        define("YEN", 5);
+        echo("$num € son " . (DOLAR * $num) . "$, $num son " . (YEN * $num) . "y.");
+    }
+
+    //tabla2
+    function tabla2(){
+
+        define("FIL", 20);
+        define("COL", 20);
+
+        $celda=0;
+
+        echo "<table>";
+        for($i=0; $i < FIL; $i++){
+            echo "<tr>";
+            for($j=0; $j < FIL; $j++){
+                $celda++;
+                if($celda % 3 == 0)echo "<td style='color:green'>$celda</td>";
+                if($celda % 3 == 1)echo "<td style='color:blue'>$celda</td>";
+                if($celda % 3 == 2)echo "<td style='color:red'>$celda</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+
+        $valor=0;
+
+        if(isset($valor))echo "declarada: " . $valor . "<br>";
+        if(empty($valor)){
+            echo "nulo";
+        }else{
+            echo "no nulo";
+        }
+        echo "<br>";
+        if(is_null($valor)){
+            echo "nulo";
+        }else{
+            echo "no nulo";
+        }
     }
 ?>
